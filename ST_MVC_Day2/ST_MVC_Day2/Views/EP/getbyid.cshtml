@@ -1,0 +1,18 @@
+﻿@model EmployeeProject
+@{
+    ViewData["Title"] = "getbyid";
+}
+
+<h1 style="color:white;">Projects Employee</h1>
+
+<div style="color:black;" class="card text-center">
+    <div class="card-header">
+        <h1>Projects workers Data</h1>
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">Project Name: @Model.Project.Name</h5>
+        <p class="card-text">Employee Name: @Model.Employee.Name</p>
+        <p class="card-text">Working Hours: @Model.WorkingHours</p>
+        <a href="/EP" class="btn btn-primary">Back to list</a>
+    </div>
+</div>

@@ -1,0 +1,45 @@
+﻿@model List<Employee>
+    @{
+        ViewData["Title"] = "Index";
+        int i = 1;
+    }
+
+    <h1 style="color:white;">Employe Data</h1>
+
+<a href="/employee/Add" class="btn btn-info"> ADD <i class="fa-solid fa-user-plus"></i></a>
+<a href="/Validation/AddEmployee" class="btn btn-info"> ADDVM <i class="fa-solid fa-user-plus"></i></a>
+    <hr />
+<table class="table table-info table-striped">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Age</th>
+                <th scope="col">Salary</th>
+                <th scope="col">Email</th>
+                <th scope="col">Office Name</th>
+                <th scope="col">Controller</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th scope="row">@(i++)</th>
+                    <td>@item.Name</td>
+                    <td>@item.Age</td>
+                    <td>@item.Salary</td>
+                    <td>@item.Email</td>
+                    <td>@item.Office.Name</td>
+                    <td>
+                    <a asp-controller="employee" asp-action="getbyid" asp-route-id="@item.ID"><i class="fa-solid fa-circle-info"></i></a>
+                        -
+                    <a asp-controller="employee" asp-action="edit" asp-route-id="@item.ID"><i class="fa-regular fa-pen-to-square"></i></a>
+                        -
+                    <a asp-controller="employee" asp-action="delete" asp-route-id="@item.ID"><i class="fa-solid fa-trash-can"></i></a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+

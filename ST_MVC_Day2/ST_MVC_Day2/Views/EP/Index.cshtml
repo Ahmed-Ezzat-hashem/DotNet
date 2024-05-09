@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    int i = 1;
+}
+
+<h1 style="color:white;">Index</h1>
+
+<a href="/EP/Add" class="btn btn-info"> ADD <i class="fa-solid fa-user-plus"></i></a>
+<hr />
+<table class="table table-info table-striped">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Employee Name</th>
+            <th scope="col">Project Name</th>
+            <th scope="col">Working Hours</th>
+            <th scope="col">Controller</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th scope="row">@(i++)</th>
+                <td>@item.Employee.Name</td>
+                <td>@item.Project.Name</td>
+                <td>@item.WorkingHours</td>
+                <td>
+                    <a asp-controller="EP" asp-action="getbyid" asp-route-id="@item.Project.ID"><i class="fa-solid fa-circle-info"></i></a>
+                    -
+                    <a asp-controller="EP" asp-action="edit" asp-route-id="@item.Project.ID"><i class="fa-regular fa-pen-to-square"></i></a>
+                    -
+                    <a asp-controller="EP" asp-action="delete" asp-route-id="@item.Project.ID"><i class="fa-solid fa-trash-can"></i></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+

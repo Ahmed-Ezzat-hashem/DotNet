@@ -1,0 +1,33 @@
+﻿@model Employee
+
+@{
+    ViewData["Title"] = "EditForm";
+}
+
+<h1 style ="color:white;">Edit Employee Data</h1>
+
+<form action="/employee/Edit" method="post" style="color:white;">
+    <input type="number" id="ID" name="ID" value="@Model.ID" hidden />
+    <div class="mb-3">
+        <label asp-for="Name" class="form-label"></label>
+        <input asp-for="Name" class="form-control" value="@Model.Name">
+    </div>
+    <div class="mb-3">
+        <label asp-for="Email" class="form-label"></label>
+        <input asp-for="Email" class="form-control" value="@Model.Email">
+    </div>
+    <div class="mb-3">
+        <label asp-for="Age" class="form-label"></label>
+        <input asp-for="Age" class="form-control" value="@Model.Age">
+    </div>
+    <div class="mb-3">
+        <label asp-for="Salary" class="form-label"></label>
+        <input asp-for="Salary" class="form-control" value="@Model.Salary">
+    </div>
+    <div class="mb-3">
+        <label  asp-for="Office_ID" class="form-label"></label>
+        <select asp-for="Office_ID" class="form-select" asp-items="ViewBag.Office" >
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

@@ -1,0 +1,38 @@
+﻿@model List<Office>
+    @{
+        ViewData["Title"] = "Index";
+        int i = 1;
+    }
+
+<h1 style="color:white;" >Office Data</h1>
+
+<a href="/Office/Add" class="btn btn-success">ADD <i class="fa-solid fa-user-plus"></i></a>
+    <hr />
+<table class="table table-striped table-success ">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Location</th>
+                <th scope="col">Controller</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th scope="row">@(i++)</th>
+                    <td>@item.Name</td>
+                    <td>@item.Location</td>
+                    <td>
+                    <a asp-controller="Office" asp-action="getbyid" asp-route-id="@item.ID"><i class="fa-solid fa-circle-info" style="color: #1f5131;"></i></a>
+                        -
+                    <a asp-controller="Office" asp-action="Edit" asp-route-id="@item.ID"><i class="fa-regular fa-pen-to-square" style="color: #1f5120;"></i></a>
+                        -
+                    <a asp-controller="Office" asp-action="Delete" asp-route-id="@item.ID"><i class="fa-regular fa-trash-can" style="color: #1f512b;"></i></a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+

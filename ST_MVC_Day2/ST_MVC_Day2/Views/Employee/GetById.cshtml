@@ -1,0 +1,24 @@
+﻿@model Employee
+@{
+    ViewData["Title"] = "GetById";
+}
+
+<h1 style="color:white;" >Employee Data</h1>
+
+<div style="color:black;" class="card text-center">
+    <div class="card-header">
+        <h1>Student Data</h1>
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">Name: @Model.Name</h5>
+        <p class="card-text">Department: @Model.Office.Name</p>
+        <a href="/employee" class="btn btn-primary">Back to list</a>
+    </div>
+    <div class="card-footer text-body-secondary">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Address: @Model.Email</li>
+            <li class="list-group-item">Age: @Model.Age</li>
+            <li class="list-group-item">Email: @Model.Salary</li>
+        </ul>
+    </div>
+</div>

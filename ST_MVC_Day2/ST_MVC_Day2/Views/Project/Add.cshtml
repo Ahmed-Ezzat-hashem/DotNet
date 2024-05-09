@@ -1,0 +1,17 @@
+﻿@model Project
+@{
+    ViewData["Title"] = "AddForm";
+}
+
+<h1 style="color:white;" >Add Project</h1>
+<form action="/Project/Add" method="post" style="color:white;">
+    <div class="mb-3">
+        <label asp-for="Name" class="form-label"></label>
+        <input asp-for="Name" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label asp-for="Description" class="form-label"></label>
+        <input asp-for="Description" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

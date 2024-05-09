@@ -1,0 +1,17 @@
+﻿@model Office
+@{
+    ViewData["Title"] = "AddForm";
+}
+
+<h1 style ="color:white;" >Add Office</h1>
+<form action="/Office/Add" method="post" style="color:white;">
+    <div class="mb-3">
+        <label asp-for="Name" class="form-label"></label>
+        <input asp-for="Name" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label asp-for="Location" class="form-label"></label>
+        <input asp-for="Location" class="form-control" >
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
